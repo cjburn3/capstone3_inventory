@@ -44,5 +44,4 @@ async function deleteDocument(db, collectionName, id){ // Delete
 
 }
 
-
 export { getAllDocuments, addDocument, updateDocument, deleteDocument };
