@@ -3,9 +3,6 @@
 import React, { useState, useEffect } from 'react';
 import { db } from 'firebase.config';
 import { getAllDocuments, addDocument, deleteDocument, updateDocument } from '../utils/firebaseUtils';
-// import LoginForm from "../components/LoginForm";
-// import LogoutButton from "../components/LogoutButton";
-// import RegisterForm from "../components/RegisterForm";
 
 export default function Management() {
   const [inventory, setInventory] = useState([]);

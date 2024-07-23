@@ -1,7 +1,7 @@
 import { collection, getDocs, addDoc, doc, updateDoc, deleteDoc } from "firebase/firestore";
 import { db } from "firebase.config";
 
-async function addDocument(db, collectionName, data) { //Create
+async function addDocument(db, collectionName, data) { 
   try {
     const docRef = await addDoc(collection(db, collectionName), data);
     console.log("Document written with ID: ", docRef.id);
@@ -10,7 +10,7 @@ async function addDocument(db, collectionName, data) { //Create
   }
 }
 
-async function getAllDocuments(db, collectionName) { //Read
+async function getAllDocuments(db, collectionName) { 
   const query = await getDocs( collection(db, collectionName) )
   const documents= [];
 
