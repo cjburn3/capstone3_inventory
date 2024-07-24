@@ -17,8 +17,8 @@ export default function RootLayout({ children }) {
         
         <div className='flex justify-center m-2' >
           
-          <Link className="m-3" href="/">Inventory List</Link>
-          <Link href="/management">Create Inventory</Link>
+          <Link className="m-3" href="/">Garage List</Link>
+          <Link href="/management">Create Garage Inventory</Link>
         </div>
 
         {children}
