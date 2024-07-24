@@ -72,12 +72,12 @@ export default function Management() {
     setEditInventoryId(inventory.id);
     setEditInventoryName(inventory.name);
     setEditInventorySymbol(inventory.symbol);
-    setEditInventoryPrice(inventory.price.toString());
+    setEditInventoryPrice(inventory.price);
   };
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">Manage Inventory</h1>
+      <h1 className="text-2xl font-bold mb-4">Manage Garage Inventory</h1>
       <div className="mb-4">
         <input
           type="text"
@@ -132,9 +132,9 @@ export default function Management() {
       </div>
       <ul className="space-y-2">
         {inventory.map((inventory) => (
-          <li key={Inventory.id} className="flex justify-between items-center bg-blue-300 p-2 rounded-md">
+          <li key={inventory.id} className="flex justify-between items-center bg-blue-300 p-2 rounded-md">
             <div>
-              <p className="font-semibold">{Inventory.name} ({inventory.symbol})</p>
+              <p className="font-semibold">{inventory.name} ({inventory.symbol})</p>
               <p>Price: ${inventory.price}</p>
             </div>
             <div>
