@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState, useEffect } from 'react';
-import { db } from 'firebase.config';
+import { db } from '../../../firebase.config';
 import { getAllDocuments, addDocument, deleteDocument, updateDocument } from '../utils/firebaseUtils';
 
 export default function Management() {

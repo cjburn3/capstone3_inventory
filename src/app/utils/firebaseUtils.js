@@ -1,5 +1,5 @@
 import { collection, getDocs, addDoc, doc, updateDoc, deleteDoc } from "firebase/firestore";
-import { db } from "firebase.config";
+import { db } from "../../../firebase.config";
 
 async function addDocument(db, collectionName, data) { 
   try {
@@ -11,12 +11,14 @@ async function addDocument(db, collectionName, data) {
 }
 
 async function getAllDocuments(db, collectionName) { 
+  console.log("Get colection "+ collectionName)
   const query = await getDocs( collection(db, collectionName) )
   const documents= [];
 
   query.forEach( (doc)=>{
     documents.push( { id: doc.id, ...doc.data() } )  
   } );
+  console.log(documents)
   return documents;
 }
 
