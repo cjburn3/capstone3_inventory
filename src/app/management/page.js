@@ -4,6 +4,11 @@ import React, { useState, useEffect } from 'react';
 import { db } from '../../../firebase.config';
 import { getAllDocuments, addDocument, deleteDocument, updateDocument } from '../utils/firebaseUtils';
 
+import AddForm from '../components/AddForm';
+import RegisterForm from '../components/RegisterForm';
+import LoginForm from '../components/LoginForm';
+import LogoutButton from '../components/LogoutButton';
+
 export default function Management() {
   const [inventory, setInventory] = useState([]);
   const [newInventoryName, setNewInventoryName] = useState('');
@@ -129,6 +134,7 @@ export default function Management() {
         <button onClick={handleAddInventory} className="bg-green-500 text-white px-4 py-2 rounded-md">
           Add Inventory
         </button>
+        <AddForm handleAddForm={handleAddForm} />
       </div>
       <ul className="space-y-2">
         {inventory.map((inventory) => (
