@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react";
-import { registerUser } from "../utils/authUtils";
+import { registerUser } from "@/utils/authUtils";
 
 const RegisterForm = () => {
   const [email, setEmail] = useState("");
@@ -18,7 +18,7 @@ const RegisterForm = () => {
   return (
     <div className="items-center justify-center py-8 bg-emerald-50">
       <p className="py-4 text-2xl font-bold text-center text-emerald-600">
-        Please Register or Login to start managing our library
+        Please Register or Login to start managing our Garage Inventory
       </p>
       <div className="w-full max-w-md p-8 mx-auto space-y-8 bg-white rounded shadow-lg y-4">
         <h2 className="text-2xl font-bold text-center text-emerald-600">

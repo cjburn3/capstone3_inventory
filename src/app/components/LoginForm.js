@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react";
-import { login } from "../utils/authUtils";
+import { login } from "@/utils/authUtils";
 
 const LoginForm = () => {
 
