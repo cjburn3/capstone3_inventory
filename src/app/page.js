@@ -2,8 +2,8 @@
 import { useState, useEffect } from 'react';
 import { addDocument, getAllDocuments } from '../app/utils/firebaseUtils';
 import { db } from "../../firebase.config";
-import LoginForm from "../components/LoginForm";
-import LogoutButton from ""../components/LogoutButton";
+import LoginForm from './components/LoginForm';
+import LogoutButton from './components/LogoutButton';
 
 export default function Home() {
 
