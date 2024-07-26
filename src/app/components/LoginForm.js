@@ -77,44 +77,84 @@
 
 // export default LoginForm;
 
+
 // src/app/components/LoginForm.js
+// import React, { useState } from 'react';
+// import { signInWithEmailAndPassword } from 'firebase/auth';
+// import { auth } from '../../../firebase.config';
+
+// const LoginForm = () => {
+//   const [email, setEmail] = useState('');
+//   const [password, setPassword] = useState('');
+
+//   const handleLogin = async (e) => {
+//     e.preventDefault();
+//     try {
+//       await signInWithEmailAndPassword(auth, email, password);
+//       alert("Login successful");
+//     } catch (error) {
+//       alert("Error logging in: " + error.message);
+//     }
+//   };
+
+//   return (
+//     <form onSubmit={handleLogin}>
+//       <h2>Login</h2>
+//       <input
+//         type="email"
+//         value={email}
+//         onChange={(e) => setEmail(e.target.value)}
+//         placeholder="Email"
+//         required
+//       />
+//       <input
+//         type="password"
+//         value={password}
+//         onChange={(e) => setPassword(e.target.value)}
+//         placeholder="Password"
+//         required
+//       />
+//       <button type="submit">Login</button>
+//     </form>
+//   );
+// };
+
+// export default LoginForm;
+
 import React, { useState } from 'react';
-import { signInWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '../../../firebase.config';
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const auth = getAuth();
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
+  const handleLogin = async () => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      alert("Login successful");
+      console.log("User logged in successfully");
     } catch (error) {
-      alert("Error logging in: " + error.message);
+      console.error("Error logging in:", error.message);
     }
   };
 
   return (
-    <form onSubmit={handleLogin}>
+    <div>
       <h2>Login</h2>
       <input
         type="email"
+        placeholder="Email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        placeholder="Email"
-        required
       />
       <input
         type="password"
+        placeholder="Password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
-        placeholder="Password"
-        required
       />
-      <button type="submit">Login</button>
-    </form>
+      <button onClick={handleLogin}>Login</button>
+    </div>
   );
 };
 

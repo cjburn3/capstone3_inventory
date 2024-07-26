@@ -20,23 +20,46 @@
 
 // export default LogoutButton;
 // src/app/components/LogoutButton.js
+
+
+// import React from 'react';
+// import { signOut } from 'firebase/auth';
+// import { auth } from '../../../firebase.config';
+// import { getAuth, signOut } from 'firebase/auth';
+
+// const LogoutButton = () => {
+//   const handleLogout = async () => {
+//     try {
+//       await signOut(auth);
+//       alert("Logout successful");
+//     } catch (error) {
+//       alert("Error logging out: " + error.message);
+//     }
+//   };
+
+//   return (
+//     <button onClick={handleLogout}>Logout</button>
+//   );
+// };
+
+// export default LogoutButton;
+
 import React from 'react';
-import { signOut } from 'firebase/auth';
-import { auth } from '../../../firebase.config';
+import { getAuth, signOut } from 'firebase/auth';
 
 const LogoutButton = () => {
+  const auth = getAuth();
+
   const handleLogout = async () => {
     try {
       await signOut(auth);
-      alert("Logout successful");
+      console.log("User logged out successfully");
     } catch (error) {
-      alert("Error logging out: " + error.message);
+      console.error("Error logging out:", error.message);
     }
   };
 
-  return (
-    <button onClick={handleLogout}>Logout</button>
-  );
+  return <button onClick={handleLogout}>Logout</button>;
 };
 
 export default LogoutButton;
