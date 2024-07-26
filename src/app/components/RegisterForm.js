@@ -82,7 +82,7 @@
 // src/app/components/RegisterForm.js
 import React, { useState } from 'react';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '../../firebaseConfig';
+import { auth } from '../../../firebase.config';
 
 const RegisterForm = () => {
   const [email, setEmail] = useState('');

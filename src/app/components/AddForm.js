@@ -1,53 +1,100 @@
-import React from "react";
+// import React, { useState } from 'react';
 
-export default function AddForm({handleAddForm}) {
+// const AddForm = ({ handleAddForm }) => {
+//   const [name, setName] = useState('');
+//   const [symbol, setSymbol] = useState('');
+//   const [price, setPrice] = useState('');
+
+//   const onSubmit = (e) => {
+//     e.preventDefault();
+//     handleAddForm(name, symbol, price);
+//     setName('');
+//     setSymbol('');
+//     setPrice('');
+//   };
+
+//   return (
+//     <form onSubmit={onSubmit}>
+//       <input
+//         type="text"
+//         value={name}
+//         onChange={(e) => setName(e.target.value)}
+//         placeholder="Enter stock name"
+//         className="border rounded-md p-2 mr-2"
+//         required
+//       />
+//       <input
+//         type="text"
+//         value={symbol}
+//         onChange={(e) => setSymbol(e.target.value)}
+//         placeholder="Enter stock symbol"
+//         className="border rounded-md p-2 mr-2"
+//         required
+//       />
+//       <input
+//         type="number"
+//         value={price}
+//         onChange={(e) => setPrice(e.target.value)}
+//         placeholder="Enter stock price"
+//         className="border rounded-md p-2 mr-2"
+//         required
+//       />
+//       <button type="submit" className="bg-green-500 text-white px-4 py-2 rounded-md">
+//         Add Stock
+//       </button>
+//     </form>
+//   );
+// };
+
+// export default AddForm;
+
+// src/app/components/AddForm.js
+import React, { useState } from 'react';
+
+const AddForm = ({ handleAddForm }) => {
+  const [name, setName] = useState('');
+  const [symbol, setSymbol] = useState('');
+  const [price, setPrice] = useState('');
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    handleAddForm(name, symbol, price);
+    setName('');
+    setSymbol('');
+    setPrice('');
+  };
+
   return (
-    <form
-      onSubmit={handleAddForm}
-      className="p-5 m-5 border border-emerald-800"
-    >
-      <h2 className="mb-2 text-2xl">Add a Book</h2>
-      <div>
-        <input
-          className="w-1/4 p-1 border rounded border-emerald-600"
-          placeholder="Title"
-          type="text"
-          name="title"
-          id="title-input"
-          required
-        />
-        <input
-          className="w-1/4 p-1 border rounded border-emerald-600"
-          placeholder="Author"
-          type="text"
-          name="author"
-          id="author-input"
-          required
-        />
-        <input
-          className="w-1/4 p-1 border rounded border-emerald-600"
-          placeholder="ISBN"
-          type="text"
-          name="isbn"
-          id="isbn"
-          required
-        />
-        <input
-          className="w-1/4 p-1 border rounded border-emerald-600"
-          placeholder="Available Copies"
-          type="number"
-          name="availableCopies"
-          // id="available-copies"
-          min={0}
-          required
-        />
-      </div>
-      <button
-        className="p-2 my-4 border rounded border-emerald-500 hover:bg-emerald-600"
-        type="submit"
-      >
-        Submit
+    <form onSubmit={onSubmit}>
+      <input
+        type="text"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        placeholder="Enter inventory name"
+        className="border rounded-md p-2 mr-2"
+        required
+      />
+      <input
+        type="text"
+        value={symbol}
+        onChange={(e) => setSymbol(e.target.value)}
+        placeholder="Enter inventory symbol"
+        className="border rounded-md p-2 mr-2"
+        required
+      />
+      <input
+        type="number"
+        value={price}
+        onChange={(e) => setPrice(e.target.value)}
+        placeholder="Enter inventory price"
+        className="border rounded-md p-2 mr-2"
+        required
+      />
+      <button type="submit" className="bg-green-500 text-white px-4 py-2 rounded-md">
+        Add Inventory
       </button>
     </form>
   );
-}
+};
+
+export default AddForm;

@@ -1,7 +1,7 @@
 "use client"
 import { useState, useEffect } from 'react';
 import { addDocument, getAllDocuments } from '../app/utils/firebaseUtils';
-import { db } from "../../firebase.config";
+import { db } from '../../firebase.config';
 import LoginForm from './components/LoginForm';
 import LogoutButton from './components/LogoutButton';
 

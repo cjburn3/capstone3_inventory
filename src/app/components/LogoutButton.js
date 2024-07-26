@@ -22,7 +22,7 @@
 // src/app/components/LogoutButton.js
 import React from 'react';
 import { signOut } from 'firebase/auth';
-import { auth } from '../../firebaseConfig';
+import { auth } from '../../../firebase.config';
 
 const LogoutButton = () => {
   const handleLogout = async () => {

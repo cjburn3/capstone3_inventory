@@ -1,8 +1,8 @@
 // src/App.js
 import React from 'react';
-import LoginForm from './components/LoginForm';
-import RegisterForm from './components/RegisterForm';
-import LogoutButton from './components/LogoutButton';
+import LoginForm from './app/components/LoginForm';
+import RegisterForm from './app/components/RegisterForm';
+import LogoutButton from './app/components/LogoutButton';
 import { auth } from '../firebaseConfig';
 import { onAuthStateChanged } from 'firebase/auth';
 
