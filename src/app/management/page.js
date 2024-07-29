@@ -292,6 +292,7 @@ export default function Management() {
       </ul>
       <div className="mt-4">
         <RegisterForm />
+        <loginForms />
         <LoginForm />
         <LogoutButton />
       </div>
