@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
           
           <Link className="m-3" href="/">Garage List</Link>
           <Link className="m-3" href="/registerForm">Register</Link>
-          <Link className="m-3" href="components/loginForm">Login</Link>
+          <Link className="m-3" href="/loginForms">Login</Link>
           <Link className="m-3" href="/registerForm">RegisterPractice</Link>"
           <Link href="/management">Create Garage Inventory</Link>
         </div>

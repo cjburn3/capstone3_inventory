@@ -1,12 +1,12 @@
 "use client"
 
 import React, { useState } from 'react';
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../../../firebase.config';
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const auth = getAuth();
 
   const handleLogin = async () => {
     try {
